@@ -1,0 +1,7 @@
+<a class="トップページ", href="/posts">トップページ</a>
+<p><%= @nickname %>さんの投稿</p>
+<% @posts.each do |post| %>
+<p><%= post.title %></p>
+<img src="<%= post.image %>">
+<p><%= post.text %></p>
+<% end %>

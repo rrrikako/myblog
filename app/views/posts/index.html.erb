@@ -1,0 +1,17 @@
+<h1>My Blog</h1>
+<% @posts.each do |post| %>
+<ul>
+  <li><%= link_to '詳細', "/posts/#{post.id}", method: :get %></li>
+    <% if user_signed_in? && post.user_id == current_user.id %>
+      <li><%= link_to '消去', "/posts/#{post.id}", method: :delete %></li>
+      <li><%= link_to '編集', "/posts/#{post.id}/edit", method: :get %></li>
+</ul>
+<% end %>
+<div class="contents">
+  <p>title:<%= post.title %></p>
+  <img src="<%= post.image %>">
+  <p><%= post.text %></p>
+  <p>by <%= post.user.nickname %></p>
+<% end %>
+</div>
+<%= paginate(@posts) %>

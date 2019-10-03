@@ -1,0 +1,17 @@
+<h2>投稿フォーム</h2>
+<%= form_for (@post) do |f| %>
+  <%= f.text_field :title, placeholder: 'title' %>
+  <%= f.text_field :image, type: 'text', placeholder: 'image url' %>
+  <%= f.text_area :text, placeholder: 'text' %>
+  <%= button_tag type: "submit" do %>投稿する
+  <% end %>
+<% end %>
+
+
+
+<%# <%= form_tag('/posts', method: :post) do %>
+<%# <input placeholder="title" type="text" name="title">
+<input textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
+<input placeholder="Image Url" type="text" name="image">
+<input type="submit" value="SENT">
+<% end %> 
